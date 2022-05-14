@@ -5,16 +5,11 @@ public class Fuel {
 
         double distance = 237;
         double fuel = 19;
-        double outputHundreds = convertConstantValue(distance);
-        System.out.println("Расход топлива на 100 км " + Math.round(useFuel(fuel, outputHundreds)) + "л");
-    }
-
-    public static double convertConstantValue(double sum) {
-        return sum / 100;
+        System.out.println("Расход топлива на 100 км " + Math.round(useFuel(fuel, distance)) + "л");
     }
 
     public static double useFuel(double fuel, double distance) {
-        return fuel / distance;
+        return fuel / (distance / 100);
     }
 
 }
