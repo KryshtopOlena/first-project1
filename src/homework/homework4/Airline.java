@@ -3,6 +3,7 @@ package homework.homework4;
 public class Airline {
     public static void main(String[] args) {
 
+
         printAirplaneInfo("1", "2");
         printAirplaneInfo("1", "2", 120);
         printAirplaneInfo("1", "2", 180, 28);

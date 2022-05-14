@@ -7,7 +7,6 @@ public class Animals {
         int period = 30;
         int perPeriodPortion = perDayPortion * period;
         int allCat = cat * perPeriodPortion;
-        System.out.println("Котики за місяць зїдають " + allCat + " порцій корму");
         return allCat;
 
     }
@@ -16,6 +15,8 @@ public class Animals {
 
         int moneyPerPortion = 2;
         int allMoney = (eatCat() + eatDog()) * moneyPerPortion;
+        System.out.println("Котики за місяць зїдають " + eatCat() + " порцій корму");
+        System.out.println("Собаки за місяць зїдають " + eatDog() + " порцій корму");
         System.out.println("За місяць на годування тварин притулок витрачає " + allMoney + " грн");
     }
 
@@ -27,7 +28,6 @@ public class Animals {
         int period = 30;
         int perPeriodPortion = perDayPortion * period;
         int allDog = perPeriodPortion * dog;
-        System.out.println("Собаки за місяць зїдають " + allDog + " порцій корму");
         return allDog;
 
     }
