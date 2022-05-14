@@ -1,4 +1,4 @@
-package com.volunteer;
+package lessons.lessons1;
 
 public class Main {
 

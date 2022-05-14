@@ -1,4 +1,4 @@
-package homework2;
+package homework.homework2;
 
 public class Location {
     public static void main(String[] args) {
