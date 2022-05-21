@@ -30,7 +30,7 @@ public class Scholarship {
         int lowerLimit = 8;
         if (averageMark >= upperLimit) {
             System.out.println("Вітаю! Ти отримаєш підвищену стипендію! Молодець!");
-        } else if (averageMark < upperLimit && averageMark >= lowerLimit) {
+        } else if (averageMark >= lowerLimit) {
             System.out.println("Вітаю! Стипендія в тебе в кармані!");
         } else {
             System.out.println("Ти прогавив своє щастя(");
