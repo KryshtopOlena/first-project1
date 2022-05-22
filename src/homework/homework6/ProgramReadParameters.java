@@ -12,12 +12,15 @@ public class ProgramReadParameters {
         double number1 = Double.parseDouble(reader.readLine());
         char operation = reader.readLine().charAt(0);
         double number2 = Double.parseDouble(reader.readLine());
+
         if (number2 == 0 && operation == '/') {
             System.out.println("На нуль ділити не можна");
             return;
         }
+
         System.out.println(calculateResult(number1, number2, operation));
     }
+
 
     public static double calculateResult(double number1, double number2, char operation) {
         double result = 0;
