@@ -42,11 +42,8 @@ public class Scholarship {
     }
 
     public static boolean isValid(int first, int second, int third, int fourth, int fifth) {
-        if (first > 12 || first < 0 || second > 12 || second < 0 ||
-                third > 12 || third < 0 || fourth > 12 || fourth < 0 || fifth > 12 || fifth < 0) {
-            return false;
-        }
-        return true;
+        return first <= 12 && first >= 0 && second <= 12 && second >= 0 &&
+                third <= 12 && third >= 0 && fourth <= 12 && fourth >= 0 && fifth <= 12 && fifth >= 0;
     }
 
 }

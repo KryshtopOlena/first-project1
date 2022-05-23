@@ -8,12 +8,10 @@ public class Box {
         int volume = calculateVolume(height,length, width);
         System.out.println(volume);
         System.out.println(calculateVolume(345,465,587) );
-            }
+    }
     public static int calculateVolume(int height,int length,int width){
 
-        int volume = height * length * width;
-        return volume;
-
+        return height * length * width;
 
     }
 }

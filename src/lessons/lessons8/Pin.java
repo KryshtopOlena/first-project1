@@ -14,10 +14,8 @@ public class Pin {
 
 
         int[] numbers = {thousands, hundreds, dozens, units};
-        int counter = 0;
         for (int i = 0; i < numbers.length; i++ ){
             for (int j = 0; j <= 9; j++){
-                counter++;
                 if (numbers[i] == j) {
                     System.out.println(j);
                     break;

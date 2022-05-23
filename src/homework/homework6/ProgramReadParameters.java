@@ -25,20 +25,11 @@ public class ProgramReadParameters {
     public static double calculateResult(double number1, double number2, char operation) {
         double result = 0;
         switch (operation) {
-            case '+':
-                result = calculateAddition(number1, number2);
-                break;
-            case '-':
-                result = calculateDeduction(number1, number2);
-                break;
-            case '*':
-                result = calculateMultiplication(number1, number2);
-                break;
-            case '/':
-                result = calculateDivine(number1, number2);
-                break;
-            default:
-                System.out.println("Дані внесено не корректно.");
+            case '+' -> result = calculateAddition(number1, number2);
+            case '-' -> result = calculateDeduction(number1, number2);
+            case '*' -> result = calculateMultiplication(number1, number2);
+            case '/' -> result = calculateDivine(number1, number2);
+            default -> System.out.println("Дані внесено не корректно.");
         }
         return result;
     }

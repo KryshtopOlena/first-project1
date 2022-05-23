@@ -7,9 +7,9 @@ public class Anton {
         double temp = 0;
         int killerNumber = -1;
         for (int i = 0; i < killers.length; i++) {
-            if (killers[i]> temp);
+            if (killers[i] > temp) ;
             temp = killers[i];
-            killerNumber = i +1;
+            killerNumber = i + 1;
 
         }
         System.out.println("Вбивця це " + killerNumber);

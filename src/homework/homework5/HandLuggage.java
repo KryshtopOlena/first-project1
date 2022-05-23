@@ -28,11 +28,8 @@ public class HandLuggage {
         double maxLengthBag = 55;
         double maxWidthBag = 20;
 
-        if (height <= maxHeight && length <= maxLength && width <= maxWidth || height <= maxHeightBag &&
-                length <= maxLengthBag && width <= maxWidthBag) {
-            return true;
-        }
-        return false;
+        return height <= maxHeight && length <= maxLength && width <= maxWidth || height <= maxHeightBag &&
+                length <= maxLengthBag && width <= maxWidthBag;
     }
 }
 
