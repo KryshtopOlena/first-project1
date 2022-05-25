@@ -10,9 +10,9 @@ public class CarWashWhile {
 
     public static void main(String[] args) throws IOException, InterruptedException {
         System.out.println("Введіть кількість машин: ");
-        String input = READER.readLine();
+        int input = Integer.parseInt(READER.readLine());
         int finished = 0;
-        while (finished < Integer.parseInt(input)) {
+        while (finished < input) {
             finished++;
             Thread.sleep(1000);
             System.out.println("Машина номер " + finished);
@@ -28,18 +28,15 @@ public class CarWashWhile {
     }
 
     public static void toSoap() {
-        String process1 = "Намилили, ";
-        System.out.println(process1);
+        System.out.println("Намилили, ");
     }
 
     public static void wash() {
-        String process2 = "Помили, ";
-        System.out.println(process2);
+        System.out.println("Помили, ");
     }
 
     public static void dryUp() {
-        String process3 = "Висушили.";
-        System.out.println(process3);
+        System.out.println("Висушили.");
     }
 }
 
