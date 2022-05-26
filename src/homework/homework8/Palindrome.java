@@ -13,12 +13,12 @@ public class Palindrome {
     public static void main(String[] args) throws IOException {
 
         System.out.println("Введіть фразу");
-        String user = READER.readLine();
-        user = user.replaceAll(" ", "");
-        user = user.toLowerCase(Locale.ROOT);
+        String userWriting = READER.readLine();
+        userWriting = userWriting.replaceAll(" ", "");
+        userWriting = userWriting.toLowerCase(Locale.ROOT);
 
-        int size = user.length();
-        char[] userString = user.toCharArray();
+        int size = userWriting.length();
+        char[] userString = userWriting.toCharArray();
         char[] userStringCopy = Arrays.copyOfRange(userString, 0, size);
 
         overturning(size, userString);
@@ -26,21 +26,21 @@ public class Palindrome {
 
     }
 
-    public static char[] overturning(int size, char[] userString) {
+    public static void overturning(int size, char[] userString) {
         for (int i = 0; i < size / 2; i++) {
             char place = userString[i];
             userString[i] = userString[size - i - 1];
             userString[size - i - 1] = place;
         }
-        return userString;
+
     }
 
     public static void comparePalindrome(char[] userString, char[] userStringCopy) {
-        if(Arrays.equals(userString, userStringCopy)){
-            System.out.println("Ця фраза являється паліндромною");
+        if (Arrays.equals(userString, userStringCopy)) {
+            System.out.println("Це паліндром");
             return;
         }
-        System.out.println("Ця фраза не являється паліндромною");
+        System.out.println("Це не паліндром");
     }
 
 }
