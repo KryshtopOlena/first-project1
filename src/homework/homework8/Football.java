@@ -15,7 +15,7 @@ public class Football {
         int[] allAge2 = fillArray(size, max, min);
         System.out.println(Arrays.toString(allAge2));
 
-        compareAverage(calculateAverage(size, allAge1), calculateAverage(size, allAge2));
+        compareAverage(calculateAverage(allAge1), calculateAverage(allAge2));
 
     }
 
@@ -29,12 +29,12 @@ public class Football {
         }
     }
 
-    public static double calculateAverage(int length, int[] array) {
+    public static double calculateAverage(int[] array) {
         double sum = 0;
-        for (int i = 0; i < length; i++) {
+        for (int i = 0; i < array.length; i++) {
             sum += array[i];
         }
-        return sum / length;
+        return sum / array.length;
     }
 
     public static int[] fillArray(int size, int max, int min) {

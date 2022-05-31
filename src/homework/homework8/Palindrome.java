@@ -21,16 +21,16 @@ public class Palindrome {
         char[] userString = userWriting.toCharArray();
         char[] userStringCopy = Arrays.copyOfRange(userString, 0, size);
 
-        overturning(size, userString);
+        overturning(userString);
         String message = isPalindrome(userString, userStringCopy) ? "Це паліндром" : "Це не паліндром";
         System.out.println(message);
     }
 
-    public static void overturning(int size, char[] userString) {
-        for (int i = 0; i < size / 2; i++) {
+    public static void overturning(char[] userString) {
+        for (int i = 0; i < userString.length / 2; i++) {
             char place = userString[i];
-            userString[i] = userString[size - i - 1];
-            userString[size - i - 1] = place;
+            userString[i] = userString[userString.length - i - 1];
+            userString[userString.length - i - 1] = place;
         }
 
     }
