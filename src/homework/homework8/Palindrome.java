@@ -22,8 +22,8 @@ public class Palindrome {
         char[] userStringCopy = Arrays.copyOfRange(userString, 0, size);
 
         overturning(size, userString);
-        comparePalindrome(userString, userStringCopy);
-
+        String message = isPalindrome(userString, userStringCopy) ? "Це паліндром" : "Це не паліндром";
+        System.out.println(message);
     }
 
     public static void overturning(int size, char[] userString) {
@@ -35,12 +35,11 @@ public class Palindrome {
 
     }
 
-    public static void comparePalindrome(char[] userString, char[] userStringCopy) {
-        if (Arrays.equals(userString, userStringCopy)) {
-            System.out.println("Це паліндром");
-            return;
+    public static boolean isPalindrome(char[] userString, char[] userStringCopy) {
+        if (!Arrays.equals(userString, userStringCopy)) {
+            return false;
         }
-        System.out.println("Це не паліндром");
+        return  true;
     }
 
 }

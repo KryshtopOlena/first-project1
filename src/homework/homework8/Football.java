@@ -37,9 +37,9 @@ public class Football {
         return sum / length;
     }
 
-    public static int[] fillArray(int length, int max, int min) {
-        int[] array = new int[length];
-        for (int i = 0; i < length; i++) {
+    public static int[] fillArray(int size, int max, int min) {
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
             array[i] = (int) (Math.random() * ((max - min) + 1) + min);
         }
         return array;
