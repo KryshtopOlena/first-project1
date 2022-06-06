@@ -3,7 +3,6 @@ package homework.homework10;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Arrays;
 
 public class Matrix {
 
@@ -11,20 +10,21 @@ public class Matrix {
 
     public static void main(String[] args) throws IOException {
         System.out.println("Задай кількість рядків матриці:");
-        int column = Integer.parseInt(READER.readLine());
+        int columns = Integer.parseInt(READER.readLine());
         System.out.println("Задай кількість стовпців матриці:");
-        int size = Integer.parseInt(READER.readLine());
+        int rows = Integer.parseInt(READER.readLine());
         System.out.println("Заповни матрицю значеннями:");
-        int[][] matrix = fillArray(column, size);
-        int[][] transposedMatrix = new int[size][column];
+        int[][] matrix = createAndFillArray(columns, rows);
+        int[][] transposedMatrix = new int[rows][columns];
         System.out.println("Твоя матриця");
-        conclusion(matrix);
-        System.out.println("Транспонована матриця");
+        print(matrix);
         valueExchange(matrix, transposedMatrix);
+        System.out.println("Транспонована матриця");
+        print(transposedMatrix);
     }
 
-    public static int[][] fillArray(int column, int size) throws IOException {
-        int[][] matrix = new int[column][size];
+    public static int[][] createAndFillArray(int columns, int rows) throws IOException {
+        int[][] matrix = new int[columns][rows];
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 matrix[i][j] = Integer.parseInt(READER.readLine());
@@ -34,7 +34,7 @@ public class Matrix {
         return matrix;
     }
 
-    public static void conclusion(int[][] matrix) {
+    public static void print(int[][] matrix) {
         for (int i = 0; i < matrix.length; i++) {
             for (int j = 0; j < matrix[i].length; j++) {
                 System.out.print(matrix[i][j] + " ");
@@ -48,9 +48,7 @@ public class Matrix {
         for (int i = 0; i < transposedMatrix.length; i++) {
             for (int j = 0; j < transposedMatrix[i].length; j++) {
                 transposedMatrix[i][j] = matrix[j][i];
-                System.out.print(transposedMatrix[i][j] + " ");
             }
-            System.out.println();
         }
     }
 }

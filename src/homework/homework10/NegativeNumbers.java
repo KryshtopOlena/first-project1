@@ -3,22 +3,21 @@ package homework.homework10;
 public class NegativeNumbers {
 
     public static void main(String[] args) {
-        int column = 2;
-        int size = 3;
+        int columns = 2;
+        int rows = 3;
 
-        int[][] arr = fillArray(column, size);
+        int[][] arr = createAndFillArray(columns, rows);
         chooseNegativeNumbers(arr);
     }
 
-    public static int[][] fillArray(int column, int size) {
+    public static int[][] createAndFillArray(int columns, int rows) {
         int max = 15;
         int min = -15;
-        int[][] arr = new int[column][size];
+        int[][] arr = new int[columns][rows];
         for (int i = 0; i < arr.length; i++) {
             for (int j = 0; j < arr[i].length; j++) {
                 arr[i][j] = (int) (Math.random() * ((max - min) + 1) + min);
             }
-            System.out.println();
         }
         return arr;
     }
@@ -29,11 +28,8 @@ public class NegativeNumbers {
                 if (arr[i][j] >= 0) {
                     continue;
                 }
-                System.out.print(arr[i][j] + " ");
-                System.out.println("(index =  " + i + "" + j + ")");
+                System.out.println(arr[i][j] + " " + "(index =  " + i + "" + j + ")");
             }
-            System.out.println();
         }
     }
-
 }
