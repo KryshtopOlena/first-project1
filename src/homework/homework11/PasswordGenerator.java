@@ -45,5 +45,4 @@ public class PasswordGenerator {
         }
         return new String(symbolsForPassword);
     }
-
 }

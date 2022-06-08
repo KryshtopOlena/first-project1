@@ -32,7 +32,7 @@ public class Cat {
                 '}';
     }
 
-    public boolean equals(Object obj) {
+    public boolean equals (Object obj) {
         if (obj instanceof Cat cat) {
             return this.weight == cat.weight && this.ageMonth == cat.ageMonth;
         }

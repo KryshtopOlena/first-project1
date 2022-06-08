@@ -5,7 +5,7 @@ public class CatMain {
     public static void main(String[] args) {
 
         Cat cat = new Cat();
-        cat.name = "Кузя";
+        cat.name= "Кузя";
         cat.weight = 5;
         cat.ageMonth = 23;
         cat.breed = "Мейн-кун";
