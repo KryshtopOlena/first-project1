@@ -12,7 +12,7 @@ public class PasswordGenerator {
         System.out.println(password);
     }
 
-    public static String getPassword() {
+    public static String getPassword () {
         String general = lower + upper + digits;
         StringBuilder builder = new StringBuilder();
         builder = builder.append(choose(1, lower))
