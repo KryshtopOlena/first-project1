@@ -2,38 +2,38 @@ package homework.homework11;
 
 public class PasswordGenerator {
 
-    public static String lower = "abcdefghijklmnopqrstuvwxyz";
-    public static String upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    public static String digits = "0123456789";
-    public static String punctuation = "_";
+    public static String LOWER = "abcdefghijklmnopqrstuvwxyz";
+    public static String UPPER = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    public static String DIGITS = "0123456789";
+    public static String PUNCTUATION = "_";
 
     public static void main(String[] args) {
         String password = getPassword();
         System.out.println(password);
     }
 
-    public static String getPassword () {
-        String general = lower + upper + digits;
+    public static String getPassword() {
+        String general = LOWER + UPPER + DIGITS;
         StringBuilder builder = new StringBuilder();
-        builder = builder.append(choose(1, lower))
-                .append(choose(1, upper))
-                .append(choose(1, digits))
+        builder = builder.append(choose(1, LOWER))
+                .append(choose(1, UPPER))
+                .append(choose(1, DIGITS))
                 .append(choose(4, general))
-                .append(punctuation);
-        return snuffleString(builder.toString());
+                .append(PUNCTUATION);
+        return shuffleString(builder.toString());
     }
 
-    public static String choose(int size, String str) {
-        String string = "";
+    public static StringBuilder choose(int size, String str) {
+        StringBuilder stringBuilder = new StringBuilder();
         int index;
         for (int i = 0; i < size; i++) {
             index = (int) (Math.random() * str.length());
-            string += str.charAt(index);
+            stringBuilder.append(str.charAt(index));
         }
-        return string;
+        return stringBuilder;
     }
 
-    public static String snuffleString(String symbolsForThePassword) {
+    public static String shuffleString(String symbolsForThePassword) {
         char[] symbolsForPassword = symbolsForThePassword.toCharArray();
         int index;
         char temp;
