@@ -21,7 +21,7 @@ public class Human {
        StringBuilder text = new StringBuilder();
        text.append("Ім'я: ").append(name);
        text.append(" (мати: ").append(Mother);
-       text.append(", батько: ").append(Father).append(")");
+       text.append("; батько: ").append(Father).append(")");
 
        int childSum = this.children.size();
        if(childSum > 0){
