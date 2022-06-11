@@ -25,8 +25,8 @@ public class Lottery {
         sortArray(size, userNumbers);
         sortArray(size, companyNumbers);
 
-        System.out.print("Кількість збігів: ");
-        System.out.println(Arrays.toString(sameNumbersInArrays(userNumbers, companyNumbers)));
+        System.out.print("Відгадані числа ");
+        System.out.println(sameNumbersInArrays(userNumbers, companyNumbers));
 
     }
 
@@ -58,15 +58,16 @@ public class Lottery {
         System.out.println(Arrays.toString(array));
     }
 
-    public static int[] sameNumbersInArrays(int[] userNumbers, int[] companyNumbers) {
-        ArrayList<Integer> arr= new ArrayList<Integer>();
+    public static ArrayList<Integer> sameNumbersInArrays(int[] userNumbers, int[] companyNumbers) {
+        ArrayList<Integer> arr = new ArrayList<>();
         int spare = 0;
         for (int i = 0; i < userNumbers.length; i++) {
             if (userNumbers[i] == companyNumbers[i]) {
-//                arr[spare] = userNumbers[i];
+                arr.add(userNumbers[i]);
                 spare++;
             }
         }
-        return new int[]{spare};
+        System.out.println(" (" + spare + ") ");
+        return arr;
     }
 }
