@@ -24,7 +24,7 @@ public class SortingZeros {
 
     public static void sortArray(byte[] array) {
         for (byte i = 0; i < array.length; i++) {
-            for (int j = 0; j < array.length; j++) {
+            for (byte j = 0; j < array.length; j++) {
                 byte sparePlace;
                 if (array[j] == 0) {
                     sparePlace = array[j];
