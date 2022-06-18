@@ -1,4 +1,4 @@
-package homeworks.homework14.Task1;
+package homeworks.homework14.Realty;
 
 public class CommercialRealty extends Realty {
 
@@ -11,7 +11,7 @@ public class CommercialRealty extends Realty {
 
     @Override
     public int calculateTax() {
-        if (tradeProceeds < 100){
+        if (tradeProceeds < 100) {
             System.out.println("Налог на нерухоме майно = 0.");
         }
         return super.calculateTax();

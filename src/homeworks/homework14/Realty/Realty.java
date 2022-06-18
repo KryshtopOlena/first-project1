@@ -1,4 +1,4 @@
-package homeworks.homework14.Task1;
+package homeworks.homework14.Realty;
 
 public class Realty {
 
@@ -10,7 +10,7 @@ public class Realty {
         this.unitTax = unitTax;
     }
 
-    public int calculateTax(){
+    public int calculateTax() {
         return totalArea * unitTax;
     }
 

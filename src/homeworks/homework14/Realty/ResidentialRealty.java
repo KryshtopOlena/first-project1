@@ -1,4 +1,4 @@
-package homeworks.homework14.Task1;
+package homeworks.homework14.Realty;
 
 public class ResidentialRealty extends Realty {
 
