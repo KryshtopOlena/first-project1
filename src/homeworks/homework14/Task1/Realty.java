@@ -16,6 +16,9 @@ public class Realty {
 
     @Override
     public String toString() {
-        return "налог складає " + calculateTax() + " грн.";
+        return "Realty{" +
+                "totalArea=" + totalArea +
+                ", unitTax=" + unitTax +
+                '}';
     }
 }

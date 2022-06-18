@@ -17,4 +17,12 @@ public class CommercialRealty extends Realty {
         return super.calculateTax();
     }
 
+    @Override
+    public String toString() {
+        return "CommercialRealty{" +
+                "tradeProceeds=" + tradeProceeds +
+                ", totalArea=" + totalArea +
+                ", unitTax=" + unitTax +
+                '}';
+    }
 }

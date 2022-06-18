@@ -14,4 +14,12 @@ public class ResidentialRealty extends Realty {
         return rate * super.calculateTax() / 100;
     }
 
+    @Override
+    public String toString() {
+        return "ResidentialRealty{" +
+                "totalArea=" + totalArea +
+                ", unitTax=" + unitTax +
+                ", rate=" + rate +
+                '}';
+    }
 }

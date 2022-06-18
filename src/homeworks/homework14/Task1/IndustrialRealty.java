@@ -7,8 +7,10 @@ public class IndustrialRealty extends Realty {
     }
 
     @Override
-    public int calculateTax() {
-        return super.calculateTax();
+    public String toString() {
+        return "IndustrialRealty{" +
+                "totalArea=" + totalArea +
+                ", unitTax=" + unitTax +
+                '}';
     }
-
 }

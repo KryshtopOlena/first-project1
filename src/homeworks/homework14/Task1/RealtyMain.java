@@ -11,14 +11,13 @@ public class RealtyMain {
         int tradeProceeds = 100;
         int totalAreaFactory = 600;
 
+        Realty house = new ResidentialRealty(totalAreaHouse, unitTax, rateHouse);
+        Realty shop = new CommercialRealty(totalAreaShop, unitTax, tradeProceeds);
+        Realty factory = new IndustrialRealty(totalAreaFactory, unitTax);
 
-        ResidentialRealty house = new ResidentialRealty(totalAreaHouse, unitTax, rateHouse);
-        CommercialRealty shop = new CommercialRealty(totalAreaShop, unitTax, tradeProceeds);
-        IndustrialRealty factory = new IndustrialRealty(totalAreaFactory, unitTax);
-
-        System.out.println("На житлову нерухомість " + house);
-        System.out.println("На торгову нерухомість " + shop);
-        System.out.println("На промислову нерухомість " + factory);
+        System.out.println(house + " tax amounted to " + house.calculateTax() + " UAN");
+        System.out.println(shop + " tax amounted to " + shop.calculateTax() + " UAN");
+        System.out.println(factory + " tax amounted to " + factory.calculateTax() + " UAN");
 
     }
 }
