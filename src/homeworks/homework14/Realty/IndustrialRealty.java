@@ -6,11 +6,4 @@ public class IndustrialRealty extends Realty {
         super(totalArea, unitTax);
     }
 
-    @Override
-    public String toString() {
-        return "IndustrialRealty{" +
-                "totalArea=" + totalArea +
-                ", unitTax=" + unitTax +
-                '}';
-    }
 }
