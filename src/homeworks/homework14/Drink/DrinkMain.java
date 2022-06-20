@@ -1,11 +1,11 @@
-package homeworks.homework14.Coffe;
+package homeworks.homework14.Drink;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
 
-public class BeveragesMain {
+public class DrinkMain {
 
     public static final BufferedReader READER = new BufferedReader(new InputStreamReader(System.in));
 
@@ -15,14 +15,14 @@ public class BeveragesMain {
     static int PRICE_TEA = 20;
 
     public static void main(String[] args) throws IOException {
-        ArrayList<Beverages> beverages = createAndFillOrder();
+        ArrayList<Drink> beverages = createAndFillOrder();
         prepare(beverages);
         System.out.println(beverages);
         sum(beverages);
     }
 
-    public static ArrayList<Beverages> createAndFillOrder() throws IOException {
-        ArrayList<Beverages> beverages = new ArrayList<>();
+    public static ArrayList<Drink> createAndFillOrder() throws IOException {
+        ArrayList<Drink> beverages = new ArrayList<>();
         System.out.println("Введи КУПИТИ, чи будь-що інше для виходу: ");
         while (READER.readLine().equals("КУПИТИ")) {
             System.out.println("Вибери напій за номером: ");
@@ -32,7 +32,7 @@ public class BeveragesMain {
             System.out.println("4.Чай " + PRICE_TEA + " грн");
             int number = Integer.parseInt(READER.readLine());
 
-            Beverages drink = null;
+            Drink drink = null;
             switch (number) {
                 case 1 -> drink = new Americano("Амерікано", PRICE_AMERICANO);
                 case 2 -> drink = new Cappuccino("Капучіно", PRICE_CAPPUCCINO);
@@ -48,15 +48,15 @@ public class BeveragesMain {
         return beverages;
     }
 
-    public static void prepare(ArrayList<Beverages> beverages) {
-        for (Beverages drink : beverages) {
+    public static void prepare(ArrayList<Drink> beverages) {
+        for (Drink drink : beverages) {
             drink.prepare();
         }
     }
 
-    public static void sum(ArrayList<Beverages> beverages) {
+    public static void sum(ArrayList<Drink> beverages) {
         int sum = 0;
-        for (Beverages drink : beverages) {
+        for (Drink drink : beverages) {
             sum += drink.getPrice();
         }
         System.out.println("До сплати " + sum + " грн");

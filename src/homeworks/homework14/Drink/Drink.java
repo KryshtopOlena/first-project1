@@ -1,6 +1,6 @@
-package homeworks.homework14.Coffe;
+package homeworks.homework14.Drink;
 
-public class Beverages {
+public class Drink {
 
     private final String name;
     protected int price;
@@ -9,7 +9,7 @@ public class Beverages {
         System.out.println("Замовлення готується...");
     }
 
-    public Beverages(String name, int price) {
+    public Drink(String name, int price) {
         this.name = name;
         this.price = price;
     }

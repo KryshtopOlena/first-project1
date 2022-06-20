@@ -1,6 +1,6 @@
-package homeworks.homework14.Coffe;
+package homeworks.homework14.Drink;
 
-public class Tea extends Beverages {
+public class Tea extends Drink {
 
     public Tea(String name, int price) {
         super(name, price);
