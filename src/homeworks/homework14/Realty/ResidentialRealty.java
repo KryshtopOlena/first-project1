@@ -11,7 +11,8 @@ public class ResidentialRealty extends Realty {
 
     @Override
     public int calculateTax() {
-        return rate * super.calculateTax() / 100;
+        int sumTax = super.calculateTax();
+        return sumTax - (rate * sumTax / 100);
     }
 
     @Override

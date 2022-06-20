@@ -20,9 +20,10 @@ public class Drink {
 
     @Override
     public String toString() {
-        return "Beverages{" +
+        return "Drink{" +
                 "name='" + name + '\'' +
                 ", price=" + price +
                 '}';
     }
+
 }

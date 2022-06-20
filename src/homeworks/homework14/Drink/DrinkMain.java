@@ -61,4 +61,5 @@ public class DrinkMain {
         }
         System.out.println("До сплати " + sum + " грн");
     }
+
 }

@@ -1,23 +1,33 @@
 package homeworks.homework14.Realty;
 
+import java.util.ArrayList;
+
 public class RealtyMain {
 
     public static void main(String[] args) {
 
         int unitTax = 90;
-        int totalAreaHouse = 125;
+        int totalAreaHouse = 100;
         int rateHouse = 30;
         int totalAreaShop = 200;
         int tradeProceeds = 100;
         int totalAreaFactory = 600;
 
+        ArrayList<Realty> realties = new ArrayList<>();
         Realty house = new ResidentialRealty(totalAreaHouse, unitTax, rateHouse);
+        realties.add(house);
         Realty shop = new CommercialRealty(totalAreaShop, unitTax, tradeProceeds);
+        realties.add(shop);
         Realty factory = new IndustrialRealty(totalAreaFactory, unitTax);
+        realties.add(factory);
 
-        System.out.println(house + " tax amounted to " + house.calculateTax() + " UAN");
-        System.out.println(shop + " tax amounted to " + shop.calculateTax() + " UAN");
-        System.out.println(factory + " tax amounted to " + factory.calculateTax() + " UAN");
+        print(realties);
+    }
 
+    public static void print(ArrayList<Realty> realties) {
+        for (Realty realty : realties) {
+            realty.calculateTax();
+            System.out.println(realty + " tax amounted to " + realty.calculateTax() + " UAN");
+        }
     }
 }

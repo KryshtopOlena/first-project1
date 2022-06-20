@@ -11,10 +11,11 @@ public class CommercialRealty extends Realty {
 
     @Override
     public int calculateTax() {
+        int sumTax = super.calculateTax();
         if (tradeProceeds < 100) {
-            System.out.println("Налог на нерухоме майно = 0.");
+            sumTax = 0;
         }
-        return super.calculateTax();
+        return sumTax;
     }
 
     @Override
