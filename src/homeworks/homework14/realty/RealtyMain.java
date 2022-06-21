@@ -1,4 +1,4 @@
-package homeworks.homework14.Realty;
+package homeworks.homework14.realty;
 
 import java.util.ArrayList;
 

@@ -1,4 +1,4 @@
-package homeworks.homework14.Drink;
+package homeworks.homework14.drink;
 
 public class Americano extends Drink {
 

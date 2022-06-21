@@ -1,4 +1,4 @@
-package homeworks.homework14.Drink;
+package homeworks.homework14.drink;
 
 import java.io.BufferedReader;
 import java.io.IOException;
