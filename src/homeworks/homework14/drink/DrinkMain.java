@@ -15,48 +15,50 @@ public class DrinkMain {
     static int PRICE_TEA = 20;
 
     public static void main(String[] args) throws IOException {
-        ArrayList<Drink> beverages = createAndFillOrder();
-        prepare(beverages);
-        System.out.println(beverages);
-        sum(beverages);
+        ArrayList<Drink> drinks = acceptingOrder();
+        prepare(drinks);
+        System.out.println(drinks);
+        printBill(drinks);
     }
 
-    public static ArrayList<Drink> createAndFillOrder() throws IOException {
-        ArrayList<Drink> beverages = new ArrayList<>();
-        System.out.println("Введи КУПИТИ, чи будь-що інше для виходу: ");
-        while (READER.readLine().equals("КУПИТИ")) {
+    public static ArrayList<Drink> acceptingOrder() throws IOException {
+        ArrayList<Drink> drinks = new ArrayList<>();
+        System.out.println("Введи Вийти для виходу, чи будь-що інше для продовження: ");
+        while (!(READER.readLine().equalsIgnoreCase("Вийти"))) {
             System.out.println("Вибери напій за номером: ");
             System.out.println("1.Амерікано " + PRICE_AMERICANO + " грн");
             System.out.println("2.Капучіно " + PRICE_CAPPUCCINO + " грн");
             System.out.println("3.Лате " + PRICE_LATTE + " грн");
             System.out.println("4.Чай " + PRICE_TEA + " грн");
             int number = Integer.parseInt(READER.readLine());
+            if (number >= 1 && number <= 4) {
+                drinks.add(createDrinks(number));
+            }
+            System.out.println("Введи Вийти для виходу, чи будь-що інше для продовження: ");
+        }
+        return drinks;
+    }
 
-            Drink drink = null;
+    public static void prepare(ArrayList<Drink> drinks) {
+        for (Drink drink : drinks) {
+            drink.prepare();
+        }
+    }
+
+    public static Drink createDrinks(int number){
+        Drink drink = null;
             switch (number) {
                 case 1 -> drink = new Americano("Амерікано", PRICE_AMERICANO);
                 case 2 -> drink = new Cappuccino("Капучіно", PRICE_CAPPUCCINO);
                 case 3 -> drink = new Latte("Лате", PRICE_LATTE);
                 case 4 -> drink = new Tea("Чай", PRICE_TEA);
-                default -> System.out.println("Нічого не замовив? То чому прийшов?");
             }
-            if (drink != null) {
-                beverages.add(drink);
-            }
-            System.out.println("Введи КУПИТИ, чи будь-що інше для виходу: ");
-        }
-        return beverages;
+            return drink;
     }
 
-    public static void prepare(ArrayList<Drink> beverages) {
-        for (Drink drink : beverages) {
-            drink.prepare();
-        }
-    }
-
-    public static void sum(ArrayList<Drink> beverages) {
+    public static void printBill(ArrayList<Drink> drinks) {
         int sum = 0;
-        for (Drink drink : beverages) {
+        for (Drink drink : drinks) {
             sum += drink.getPrice();
         }
         System.out.println("До сплати " + sum + " грн");
