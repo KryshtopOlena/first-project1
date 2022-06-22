@@ -11,7 +11,7 @@ public class DegreeMain {
     public static void main(String[] args) throws IOException {
         int celsius = getCelsius();
         String nameToCovert = getNameToCovert();
-        covertMain(celsius, nameToCovert);
+        printDegree(celsius, nameToCovert);
     }
 
     public static int getCelsius() throws IOException {
@@ -31,7 +31,7 @@ public class DegreeMain {
         String nameToCovert = READER.readLine();
         String kel = "k";
         String fahr = "f";
-        if (nameToCovert.equals(kel) || nameToCovert.equals(fahr)) {
+        if (nameToCovert.equalsIgnoreCase(kel) || nameToCovert.equalsIgnoreCase(fahr)) {
             return nameToCovert;
         } else {
             System.out.println("Ви ввели невірне значення, повторіть");
@@ -40,14 +40,15 @@ public class DegreeMain {
         return nameToCovert;
     }
 
-    public static void covertMain(int celsius, String nameToCovert) {
+    public static void printDegree(int celsius, String nameToCovert) {
         String kel = "k";
+        String fahr = "f";
         Kelvin kelvin = new Kelvin("градуси Фаренгейта Кельвіна", celsius);
         Fahrenheit fahrenheit = new Fahrenheit("градуси Фаренгейта", celsius);
-        if (nameToCovert.equals(kel)) {
+        if (nameToCovert.equalsIgnoreCase(kel)) {
             double kelvinResult = (kelvin).covert();
             System.out.println("При конвертації " + celsius + " градусів Цельсія ми маємо " + kelvinResult + " градусів Кельвіна");
-        } else {
+        } else if (nameToCovert.equalsIgnoreCase(fahr)){
             double fahrenheitResult = (fahrenheit).covert();
             System.out.println("При конвертації " + celsius + " градусів Цельсія ми маємо " + fahrenheitResult + " градусів Фаренгейта");
         }
