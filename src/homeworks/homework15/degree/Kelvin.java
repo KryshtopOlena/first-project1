@@ -1,16 +1,12 @@
 package homeworks.homework15.degree;
 
-public class Kelvin extends Degree implements Converter {
+public class Kelvin implements Convertible {
 
-    private final double celsius;
-
-    public Kelvin(String name, double celsius) {
-        super(name);
-        this.celsius = celsius;
+    public Kelvin() {
     }
 
     @Override
-    public double covert() {
+    public double covert(int celsius) {
         return celsius + 273.15;
     }
 

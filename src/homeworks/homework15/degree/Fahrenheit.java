@@ -1,16 +1,12 @@
 package homeworks.homework15.degree;
 
-public class Fahrenheit extends Degree implements Converter {
+public class Fahrenheit implements Convertible {
 
-    private final double celsius;
-
-    public Fahrenheit(String name, double celsius) {
-        super(name);
-        this.celsius = celsius;
+    public Fahrenheit() {
     }
 
     @Override
-    public double covert() {
+    public double covert(int celsius) {
         return (celsius * 1.8) + 32;
     }
 
